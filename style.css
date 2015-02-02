@@ -1,0 +1,697 @@
+/*
+Theme Name: City News
+Theme URL: http://www.goodwinpress.ru
+Description:   журнальный шаблон от Goodwinpress
+Author: Alex Goodwin
+Version: 1.0.2
+Tags: responsive, magazine, light, 3-columns, mobile, inview, ticker, tips, widgets, stars-raiting
+*/
+
+
+/*
+
+Содержание таблицы стилей
+
+01.  reset styles
+02.  стили фона, шрифты
+03.  ссылки
+04.  основной контейнер сайта
+05.  логотип / текст.заголовок
+06.  колонки главной страницы
+07.  блоки сайдбара и постов
+08.  социалка
+09.  верхнее меню
+10.  нижнее меню
+11.  мобильное меню
+12.  колонки и блоки внутряков
+13.  цветные заголовки рубрик
+14.  бегущая строка
+15.  заголовки в основном контейнере
+16.  изображения
+17.  красивые рубрики
+18.  списки
+19.  всплывающие подсказки
+20.  поиск по сайту
+21.  подвал
+22.  виджеты подвала
+23.  заголовки подвала
+24.  облако меток в подвале
+25.  кнопка Наверх
+26.  лого и текст в подвале
+27.  кредитсы
+28.  похожие записи
+29.  постраничная навигация
+30.  комментарии
+31.  календарь
+32.  анимация в шапке
+33.  адаптивные стили
+
+
+*/
+
+
+
+
+
+/* 01 reset styles */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline}
+body{line-height:1}
+html{ -webkit-text-size-adjust:100%; -ms-text-size-adjust: 100%}
+em, i{font-style:italic}
+ol, ul{list-style:none}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after, q:before, q:after{content:''; content:none}
+table{border-collapse:collapse; border-spacing:0}
+.clear{clear:both; display:block; content:""; height:0px; visibility:hidden}
+* html .clearfix{height:1%}
+img, video, object, embed{max-width:100%}
+img{height:auto}
+iframe{max-width:100%}
+audio, canvas, video{display:inline-block; max-width:100%}
+.aligncenter{display:block; margin:0px auto 10px}
+.alignleft{float:left}
+.right{float:right}
+.center{display:block; margin:auto; text-align:center}
+.left{float:left}
+.alignright{float:right}
+dl{margin:0 0 24px 0}
+dt{font-weight:bold}
+dd{margin-bottom:18px}
+strong, b{font-weight:700}
+cite, em, i{font-style:italic}
+big{font-size:131.25%}
+small{font-size:11px}
+ins{background:#ffc; text-decoration:none}
+blockquote{padding:40px 40px 20px 40px; margin:0px 0 20px 0px; font-style:italic; display:block; background:#fafafa; border:1px solid #eaeaea; font-size:16px}
+pre{background:#f7f7f7; color:#444; line-height:18px; margin-bottom:18px; padding:1.5em}
+abbr, acronym{border-bottom:1px dotted #666; cursor:help}
+sup, sub{height:0; line-height:1; position:relative; vertical-align:baseline}
+sup{bottom:1ex}
+sub{top:.5ex}
+input, textarea{color:#666; font-size:15px; border:1px solid #ccc; background:#f8f8f8; vertical-align:middle}
+table{width:100%;  margin:10px 0 20px 0}
+th{background:#f9f9f9; color:#000;  text-align:left; padding:8px 14px; font-size:15px;  font-weight:bold;  border:1px solid #eaeaea}
+td{padding:8px 14px; border:1px solid #eaeaea}
+tr:nth-of-type(even){background:#fff}
+tr:nth-of-type(odd){background:#fafafa}
+ul{list-style:none; background-image:none; margin:0 0 20px 20px}
+ol{list-style:decimal; margin:0 0 20px 20px}
+ol li{margin:0px; padding:0 0 8px 0px}
+ol ol{list-style:upper-alpha}
+ol ol ol{list-style:lower-roman}
+ol ol ol ol{list-style:lower-alpha}
+ul ul,  ol ol,  ul ol,  ol ul{margin-bottom:0}
+hr{background-color:rgba(0,0,0,0.5); border:0; height:1px; margin-bottom:20px}
+a{-webkit-transition:all 0.3s ease-in-out; -moz-transition:all 0.3s ease-in-out; -o-transition:all 0.3s ease-in-out; transition:all 0.3s ease-in-out}
+p{margin-bottom:15px}
+
+
+/* 02 стили фона, шрифтов */
+body{background:#e9e9e9; font-family:'PT Sans',Arial,sans-serif; font-size:14px; line-height:21px; font-weight:400; color:#333}
+
+/* 03 стили ссылок */
+a{color:#222; text-decoration:underline}
+a:hover{color:#3048A6; text-decoration:underline; cursor:pointer}
+.single p a, .single li a, .page p a, .page li a {color:#3048A6; text-decoration:underline; }
+.single .postcol p a:hover, .single .postcol li a:hover, .page .postcol p a:hover, .page .postcol li a:hover {color:#222; text-decoration:underline}
+
+/* 04 основной контейнер сайта */
+#wrap{width:100%; max-width:1100px; background:#fff; margin:0 auto 20px; -webkit-box-shadow:0px 0px 50px rgba(51,51,51,0.3); -moz-box-shadow:0px 0px 50px rgba(51,51,51,0.3); box-shadow:0px 0px 50px rgba(51,51,51,0.3)}
+.inner{width:92%; margin:auto}
+
+
+/* 05 логотип и текстовый заголовок */
+.logo{float:left; width:75%; margin:0 0 5px 0; height:100px;}
+.blogtitle{ font-size:32px; line-height: 34px; margin: 30px 0; font-weight: 700; text-transform: uppercase; }
+.blogtitle a {text-decoration: none;  padding: 7px 0px; }
+.blogtitle a:hover{ text-decoration:none}
+.desc {font-size: 11px; line-height: 15px; color:#888;  margin: 13px 0;  text-transform: uppercase}
+
+
+/* 06 контейнеры и колонки сайта - главная */
+.main-col, .mid-col, .sidebar, .sidebar2, .data-col, .main-text-col, .main-text-sidebar, .main-text-sidebar2, .postcol{float:left}
+.main-col{width:49%; margin-right:3%}
+.mid-col{width:18%; margin-right:3%}
+.sidebar{width:27%}
+.sidebar2{width:100%}
+.mid-col p{font-size:13px}
+
+
+
+/* 07 блоки сайдбара и постов */
+.side-blok{margin:0 0 15px 0; padding:0 0 10px 0}
+.entry{margin:0 0 20px 0}
+.post{margin:0px 0 50px 0}
+
+
+/* 08 социалка */
+.topsocial{width:25%;  float:right; margin-top:30px; }
+
+.twi{background:url(images/social/tw.png) no-repeat; width:37px; height:37px; text-indent:-9999px; border:none; cursor:pointer; margin:0 10px 0 0; display:block; float:right}
+.fb{background:url(images/social/fb.png) no-repeat; width:37px; height:37px; text-indent:-9999px; border:none; cursor:pointer; margin:0 10px 0 0; display:block; float:right}
+.vk{background:url(images/social/vk.png) no-repeat; width:37px; height:37px; text-indent:-9999px; border:none; cursor:pointer; margin:0 10px 0 0; display:block; float:right}
+.gp{background:url(images/social/gp.png) no-repeat; width:37px; height:37px; text-indent:-9999px; border:none; cursor:pointer; margin:0 10px 0 0; display:block; float:left}
+.yt{background:url(images/social/yt.png) no-repeat; width:37px; height:37px; text-indent:-9999px; border:none; cursor:pointer; margin:0; display:block; float:left}
+
+
+/* 09 верхнее меню */
+.topnavig{list-style:none; font-weight:normal; width:100%; padding:0; position:relative; margin:0px auto 10px; z-index:10000; border-bottom:1px dashed #ddd}
+.topnavig ul{margin:0; list-style-type:none; font-style:normal; letter-spacing:normal}
+.topnavig ul li{position:relative; display:inline; float:left; padding:0; padding-right:1px; text-transform:uppercase; position:relative}
+.topnavig ul li:first-child{margin:0; z-index:10000}
+.topnavig ul li a{display:block; padding:12px 12px 8px 12px; text-decoration:none; display:block; font-size:11px; line-height:20px; font-weight:400; color:#999; text-transform:uppercase}
+* html .topnavig ul li a{display:inline-block}
+.topnavig ul li a:hover, .topnavig ul li a.selected{ text-decoration:underline; color:#9a2b48}
+.topnavig ul li ul{position:absolute; height:auto; left:0; display:none; visibility:hidden; width:200px; padding:0; border:1px solid #ddd; border-top:none}
+.topnavig ul li ul li{display:list-item; float:none; background:none; background:#fafafa; padding-right:0; margin-left:0}
+.topnavig ul li ul li ul{top:0}
+.topnavig ul li ul li a{margin:0; border:none; border-top:1px dotted #ddd}
+.topnavig ul li ul li a:hover{color:#9a2b48}
+* html .topnavig{height:1%}
+.topnavig ul li ul li ul{position:absolute; height:auto; left:200px; display:none; visibility:hidden; width:200px; padding:0; margin-left:-1px}
+
+
+/* 10 нижнее меню */
+.menunav{list-style:none; font-weight:normal; width:100%; padding:0; position:relative; margin:0px auto 10px; clear:both; height:50px; z-index:1001}
+.menunav ul{margin:0; list-style-type:none; font-style:normal; letter-spacing:normal}
+.menunav ul li{position:relative; display:inline; float:left; padding:0; padding-right:1px; position:relative; z-index:101}
+.menunav ul li:first-child{margin:0; z-index:1}
+.menunav ul li a{display:block; padding:15px 12px; text-decoration:none; display:block; font-size:14px; line-height:20px; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.2px}
+* html .menunav ul li a{display:inline-block}
+.menunav ul li ul{position:absolute; height:auto; left:0; display:none; visibility:hidden; width:200px; padding:0; -webkit-box-shadow:0px 4px 20px rgba(51,51,51,0.7); -moz-box-shadow:0px 4px 20px rgba(51,51,51,0.7); box-shadow:0px 4px 20px rgba(51,51,51,0.7)}
+.menunav ul li ul li{display:list-item; float:none; background:none;  padding-right:0; margin-left:0}
+.menunav ul li ul li ul{top:0}
+.menunav ul li ul li a{margin:0; border:none; }
+* html .menunav{height:1%}
+.menunav ul li ul li ul{position:absolute; height:auto; left:200px; display:none; visibility:hidden; width:200px; padding:0; margin-left:-1px}
+
+
+/* 11 мобильное меню */
+.select-menu, .select-menu-main{width:100%; padding:0; height:40px; font-size:14px; margin:20px auto; display:none; border:1px solid #ddd}
+
+
+/* 12 контейнеры и колонки - внутряки */
+.data-col{width:17%; margin-right:4%; font-size: 12px}
+.main-text-col{width:79%}
+.main-text-sidebar{width:26%}
+.main-text-sidebar2{width:50%}
+.postcol{ width:70%; margin:0 4% 3% 0}
+
+.news-date{color:#666; display:block; font-size:11px; font-weight:400; padding-bottom:10px}
+.news-all{margin-bottom:15px}
+.news-left, .news-right{float:left; width:48%; margin-top:7px}
+.news-left{margin-right:4%}
+
+ul.cent-col-cont{list-style:none; margin:0 0 15px 0}
+ul.cent-col-cont li{background:#f9f9f9; padding:5px 13px 5px 13px; border-bottom:1px solid #fff; text-shadow:1px 1px 1px #fff}
+ul.col-list{margin:10px 0 10px 15px}
+ul.col-list li{list-style:square}
+.cent-col p{font-size:11px}
+
+.index-date-cent{color:#666; font-size:11px; margin:5px 0 5px 0; text-align:center}
+
+.post-cats a{ background:#4da694; color:#fff;  float:left; margin:0 5px 5px 0; padding:2px 4px; line-height:20px; font-size:13px !important;  text-decoration:none}
+.post-cats a:hover{background:#3048A6;  color:#fff;  text-decoration:none}
+.post-tags, .post-cats{color:#FFF; float:left; margin:5px 0 15px 0; font-size:13px !important; text-transform: none}
+.single .post-tags a{display:block; clear:left; width:auto}
+.single .post-tags a{background:#555; color:#d9d9d9;  float:left; margin:0 5px 5px 0; padding:2px 4px; line-height:20px;  font-size:13px !important;  text-decoration:none;text-transform: none}
+.single  .post-tags a:hover{background:#3048A6;  color:#fff;  text-decoration:none}
+ 
+.data-col-date, .data-col-admin{font-size:13px; display:block; font-weight:400}
+
+.innernav {display: none}
+
+
+/* 13 цветные заголовки рубрик */
+.cat-index{ width:97%; font-size:13px; display:inline-block; font-weight:700; margin-bottom:13px; color:#fff; padding-top:6px; padding-bottom:6px; padding-left:3%}
+.cat-index a{text-decoration:none; color:#fff}
+.cat-index a:hover{text-decoration:underline; color:#fff}
+.archive .postcol .cat-index, .search-results .postcol .cat-index{margin-bottom:20px}
+
+
+ /* 14 бегущая строка */
+ #showticker {height:37px; padding-bottom: 1px; margin-bottom:15px; border-bottom: 1px dashed #ddd }
+.tickercontainer{width:100%; height:27px; margin:0; padding:0; overflow:hidden; float:left; }
+.tickercontainer .mask{position:relative; padding-left:10px; padding-right:10px; top:8px; height:18px; overflow:hidden}
+ul.newsticker{-webkit-transition:all 0s linear; -moz-transition:all 0s linear; -o-transition:all 0s linear; transition:all 0s linear; position:relative; margin-left:20px; font-size:15px; font-weight:700; list-style-type:none; margin:0; padding:0; z-index:1000}
+ul.newsticker li{float:left; margin:0; padding-right:15px}
+ul.newsticker a{color:#222; white-space:nowrap; padding:0; margin:0 40px 0 0; text-decoration:none}
+ul.newsticker a:hover{color:#3048A6;text-decoration:underline}
+ul.newsticker span{margin:0 10px 0 0}
+.webtick{float:left; width:15%; padding-top:8px; text-transform:uppercase}
+
+
+/* 15 заголовки сайта */
+h1, h2, h3, h4, h5, h6{font-weight:700; text-transform:uppercase}
+h1{font-size:26px; line-height:28px; margin-bottom:15px}
+h2{font-size:24px; line-height:26px; margin-bottom:15px}
+h3{font-size:22px; line-height:24px; margin-bottom:15px}
+h4{font-size:20px; line-height:22px; margin-bottom:15px}
+h5{font-size:18px; line-height:20px; margin-bottom:15px}
+h6{font-size:16px; line-height:18px; margin-bottom:15px}
+
+h1.post-title{font-size:28px; line-height:32px; margin-bottom:25px; font-weight:700; color:#222}
+h3.post-title{font-size:18px; line-height:22px; margin:0 0 5px 0; font-weight:700; color:#222; text-transform:none}
+
+h1.news-title{font-size:24px; line-height:27px; margin:3px 0 5px 0}
+h2.news-title{font-size:20px; line-height:24px; margin:3px 0 5px 0}
+h3.news-title{font-size:15px; line-height:19px; margin:3px 0 5px 0}
+h1.news-title a, h2.news-title a, h3.news-title a, h2.small-title a{ text-decoration:none}
+h1.news-title a:hover, h2.news-title a:hover, h3.news-title a:hover, h2.small-title a:hover{text-decoration:underline}
+
+h2.small-title{font-size:12px; line-height:18px;  margin:0px 0 8px 0; text-align:center; color:#191919; text-decoration:none; padding:0 10px}
+h2.index-title-small{font-size:12px; line-height:16px;  margin:0 0 9px 0}
+h2.index-title-small a{ text-decoration:none}
+h2.index-title-small a:hover{ text-decoration:underline}
+
+
+/* 16 изображения сайта */
+.main-col img:hover, .mid-col img:hover, .sidebar img:hover, .related-posts img:hover, .archive img:hover, .search img:hover,.main-text-sidebar img:hover{opacity:.7}, .main-text-sidebar2 img:hover{opacity:.7}
+
+img.aligncenter{display:block; margin-left:auto; margin-right:auto; margin-bottom:20px}
+img.alignleft{float:left; margin:5px 30px 10px 0}
+img.alignright{float:right; margin:5px 0 10px 30px}
+
+.no-display{opacity:0}
+.appear{opacity:1;   -webkit-transition:all .4s ease-in-out;     -moz-transition:all .4s ease-in-out;     -o-transition:all .4s ease-in-out;     transition:all .4s ease-in-out}
+
+.wp-caption{border:1px solid #eaeaea; text-align:center; padding:2% 2% 0 2%; background:#fafafa; margin-bottom:15px;  max-width:96%;  height:auto}
+.wp-caption img{margin:0; padding:0; border:0 none}
+.wp-caption-text{font-size:10px; line-height:17px; padding:7px 5px; margin:0}
+.wp-caption.alignleft{float:left; margin:5px 30px 7px 0}
+.wp-caption.alignright{float:right; margin:5px 0 7px 30px}
+.wp-caption.aligncenter{display:block; margin-left:auto; margin-right:auto; margin-bottom:20px}
+
+
+/* 17 красивые рубрики */
+ul.nice-cats{margin-bottom:25px; margin:0 0 20px 0px; text-transform:uppercase; font-size:12px}
+.nice-cats li.cat-item{border-bottom:1px dotted #eaeaea; text-align:right; font-weight:300; padding:4px 0; clear:both; list-style:none; color:#222; background:transparent; padding-left:0}
+.nice-cats li.cat-item a{color:#222; text-align:left; float:left; text-decoration:none}
+.nice-cats li.cat-item a:hover{color:#3048A6; text-decoration:underline; cursor:pointer}
+
+
+/* 18 списки */
+.post ul, .side-blok ul{list-style:square; padding-left:15px; margin:0}
+.post ul li, .side-blok ul li{margin:0px 0px 8px 0px; padding:0 0 0 3px}
+.post ul li ul, .side-blok ul li ul{list-style:square; padding-left:15px; padding-top:8px}
+.post ul li ul li, .side-blok ul li ul li{margin:0px 0px 8px 0px; padding:0 0 0 3px}
+
+
+/* 19 всплывающие подсказки */
+.tipsy{font-size:12px; position:absolute; padding:5px; z-index:100000}
+.tipsy-inner{background-color:#000; color:#FFF; max-width:200px; padding:6px 10px; padding-top:5px; text-align:center; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px}
+.tipsy-arrow{position:absolute; width:0; height:0; line-height:0; border:5px dashed #000}
+.tipsy-arrow-n{border-bottom-color:#000}
+.tipsy-arrow-s{border-top-color:#000}
+.tipsy-arrow-e{border-left-color:#000}
+.tipsy-arrow-w{border-right-color:#000}
+.tipsy-n .tipsy-arrow{top:0px; left:50%; margin-left:-5px; border-bottom-style:solid; border-top:none; border-left-color:transparent; border-right-color:transparent}
+.tipsy-nw .tipsy-arrow{top:0; left:10px; border-bottom-style:solid; border-top:none; border-left-color:transparent; border-right-color:transparent}
+.tipsy-ne .tipsy-arrow{top:0; right:10px; border-bottom-style:solid; border-top:none; border-left-color:transparent; border-right-color:transparent}
+.tipsy-s .tipsy-arrow{bottom:0; left:50%; margin-left:-5px; border-top-style:solid; border-bottom:none; border-left-color:transparent; border-right-color:transparent}
+.tipsy-sw .tipsy-arrow{bottom:0; left:10px; border-top-style:solid; border-bottom:none; border-left-color:transparent; border-right-color:transparent}
+.tipsy-se .tipsy-arrow{bottom:0; right:10px; border-top-style:solid; border-bottom:none; border-left-color:transparent; border-right-color:transparent}
+.tipsy-e .tipsy-arrow{right:0; top:50%; margin-top:-5px; border-left-style:solid; border-right:none; border-top-color:transparent; border-bottom-color:transparent}
+.tipsy-w .tipsy-arrow{left:0; top:50%; margin-top:-5px; border-right-style:solid; border-left:none; border-top-color:transparent; border-bottom-color:transparent}
+
+
+/* 20 поиск по сайту */
+#search{padding:0px; height:50px; position:absolute; top:0; right:0}
+#search2{padding:0px; height:50px; margin:20px 0}
+#search #sfor{width:180px;  padding:16px 0 16px 15px; margin:0; color:#fff; background:transparent url(images/search-bg.png) repeat; border:none; font-family:'PT Sans',Arial,sans-serif; font-size:13px; text-transform:uppercase; font-weight:700}
+#search2 #sfor{width:98%; height:50px;  padding:0 0 0 2%; margin:0; color:#333; background:#eaeaea; border:none; font-family:'PT Sans',Arial,sans-serif; font-size:12px; text-transform:uppercase; font-weight:700}
+#search #sfor:focus, #search2 #sfor:focus{color:#333; background: rgba(247,200,99,1); -webkit-box-shadow:0px 0px 4px rgba(102,203,245,1); -moz-box-shadow:0px 0px 4px rgba(102,203,245,1); box-shadow:0px 0px 4px rgba(102,203,245,1)}
+
+
+/* 21 подвал */
+#footer{ margin:20px auto 0px;  padding-top:50px;  padding-left:5%;  padding-right:5%;    color:#d9d9d9;  border-bottom:10px solid #222}
+
+
+/* 22 виджеты подвала*/
+.foot-widget1{margin:0 5% 5% 0px; float:left; display:block; width:30%}
+.foot-widget2{margin:0 4% 5% 0px; float:left; display:block; width:30%}
+.foot-widget3{margin:0 0 5% 0; float:right; display:block; width:30%}
+#footer ul{list-style-type:square; margin:0px 0px 15px 20px; padding:0}
+#footer ul li{margin:0px 0px 8px 0px; padding:0 0 0 5px}
+#footer li ul{display:block; padding:10px 0px 0px 10px}
+#footer ul li ul li{display:block; padding:0px 0px 0px 5px}
+#footer a{color:#d9d9d9; text-decoration:none}
+#footer a:hover{color:#fff; text-decoration:underline}
+
+
+/* 23 заголовки подвала */
+.foot-title span{font-size:16px; line-height:20px; font-weight:700; padding-right:10px; color:#777; text-transform:uppercase; margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid #777; display:block}
+
+/* 24 облако меток в подвале */
+#footer div.tagcloud{display:inline-block; margin-bottom:10px}
+#footer .tagcloud a, #footer .post-tags a{ background:#555; color:#d9d9d9;  float:left; margin:0 5px 5px 0; padding:2px 4px; line-height:20px;  font-size:13px !important;  text-decoration:none; text-transform: uppercase}
+#footer .tagcloud a:hover{background:#3048A6;  color:#fff;  text-decoration:none}
+
+
+/* 25 кнопка наверх */
+#backtop{display:none; position:fixed; width:29px; height:30px; z-index:100; bottom:72px; right:30px; background:transparent url(images/top.png) no-repeat; text-indent:-9999px}
+#backtop:hover{-webkit-box-shadow:0px 0px 20px rgba(51,51,51,0.5); -moz-box-shadow:0px 0px 20px rgba(51,51,51,0.5); box-shadow:0px 0px 20px rgba(51,51,51,0.5)}
+
+
+/* 26 лого и текст в подвале */
+.logo-bottom{margin:auto; text-align:center; border-top:1px solid #666; padding:30px 0}
+.logo-bottom span{display:block; margin:2% 10%; font-style:italic}
+
+#footer .logo-bottom   a{color:#d9d9d9;text-decoration:underline}
+#footer .logo-bottom   a:hover{color:#fff;text-decoration:underline}
+
+
+/* 27 кредитсы */
+.credits{color:#959595; width:100%; max-width:1100px; margin:0 auto 30px; font-size:13px;  text-align:center}
+.credits span{padding:0 0 20px 0; text-shadow:0 1px 1px #fff;}
+.credits a{color:#959595; text-decoration:none}
+.credits a:hover{color:#3048A6; text-decoration:underline}
+.credits .hdn{display:none;}
+
+
+
+/* 28 похожие записи */
+ul.related-posts{float:left; margin:10px 0 0px 0;   padding:10px 0 0 0}
+.related-posts li.related{list-style:none; width:33%; float:left; display:inline; padding:0; margin:0 0.33% 0 0; border:none}
+.related-posts li:nth-child(4) article{display:none}
+.related-posts .related-inner{padding:0 20px 0 0}
+.related-posts .post-title{margin-bottom:10px; font-size:12px;  line-height:14px;  border:none; display:block}
+.related-posts .post-title a{color:#333; text-decoration:none}
+.related-posts .post-title a:hover{color:#3048A6; text-decoration:underline}
+.related-posts img{max-width:170px}
+
+
+
+/* 29 постраничная навигация */
+.wp-pagenavi{width:100%; margin:50px 0 30px 0px; padding:50px 0; font-size:14px; color:#888; font-weight:400; border-top:1px solid #ddd}
+.wp-pagenavi a, .wp-pagenavi a:link{padding:10px 8px; margin:1px 4px 2px 0; text-decoration:none; color:#888; border:none}
+.wp-pagenavi a:visited{padding:10px 8px; margin:1px 4px 2px 0; text-decoration:none; color:#888; border:none}
+.wp-pagenavi a:hover{color:#fff;  background:#3048A6; border:none}
+.wp-pagenavi a:active{padding:10px 8px; margin:2px 4px 2px 0; text-decoration:none; color:#fff; border:none}
+.wp-pagenavi span.pages{padding:2px 4px 2px 4px; margin:1px 30px 20px 2px; border:none}
+.wp-pagenavi span.current{padding:10px 8px; margin:1px 4px 2px 0; color:#fff; background:#3048A6;border:none}
+.wp-pagenavi span.extend{padding:2px 4px 2px 4px; margin:2px}
+
+
+
+
+/* 30 комментарии */
+.comment-title{ font-size:20px; font-weight:300; line-height:28px; margin:5px 0 5px 0; text-transform:uppercase; border-bottom:1px dashed #ddd; padding:0 0 15px 0; display:block}
+.comments-box{margin:40px 0px 20px 0; padding:0; position:relative}
+.comments-box img{}
+#respond{margin:20px 0px 20px 0px; padding:0px}
+#respond p{margin:0px 0px 5px 0px}
+.cancel-comment-reply{padding:0px 0px 20px 0px; font-size:12px}
+.cancel-comment-reply a{color:#900; text-decoration:underline}
+.cancel-comment-reply a:hover{color:#333}
+.text{border:1px solid #DDD; padding:2px; color:#666; width:200px}
+ol.commentlist li div.vcard cite.fn a.url:hover{text-decoration:none}
+ol.commentlist{margin:20px 0px 0px 0px; padding:0px}
+ol.commentlist li{margin:0px 0px 10px 0px; padding:15px 0 15px 0; list-style-type:none}
+ol.commentlist li.alt{}
+ol.commentlist li.bypostauthor{}
+ol.commentlist li.byuser{}
+ol.commentlist li.comment-author-admin{}
+ol.commentlist li.comment{}
+ol.commentlist li div.comment-author{}
+ol.commentlist li div.vcard{}
+ol.commentlist li div.vcard cite.fn{font-style:normal; font-size:17px}
+ol.commentlist li div.vcard cite.fn a.url{color:#333; text-decoration:none}
+ol.commentlist li div.vcard img.avatar{float:left; margin:0px 10px 5px 0px}
+ol.commentlist li div.vcard img.avatar{-webkit-border-radius:33px; -moz-border-radius:33px; border-radius:33px; border:1px solid #ddd; padding:4px}
+ol.commentlist li div.vcard img.photo{padding:2px; border:1px solid #DDD}
+ol.commentlist li div.vcard span.says{color:#7b7b7b}
+ol.commentlist li div.commentmetadata{}
+ol.commentlist li div.comment-meta{margin:3px 0px 20px 0px}
+ol.commentlist li div.comment-meta a{color:#7b7b7b; text-decoration:none}
+ol.commentlist li p{margin:10px 0px 0px 0px}
+ol.commentlist li ul{}
+ol.commentlist li div.reply{margin:0px; line-height:18px; font-size:12px}
+ol.commentlist li div.reply a{ color:#3048A6 !important;  text-decoration:underline; font-size:11px}
+ol.commentlist li div.reply a:hover{color:#333 !important; text-decoration:underline}
+ol.commentlist li ul.children{padding-left:20px; background:transparent url(images/sub.png) 0px 30px no-repeat;margin-bottom: 5px}
+ol.commentlist li ul.children li{margin:0px 0px 0px 20px}
+ol.commentlist li ul.children li li.alt{}
+ol.commentlist li ul.children li.bypostauthor{}
+ol.commentlist li ul.children li.byuser{}
+ol.commentlist li ul.children li.comment{}
+ol.commentlist li ul.children li.comment-author-admin{}
+ol.commentlist li ul.children li.depth-2{}
+ol.commentlist li ul.children li.depth-3{}
+ol.commentlist li ul.children li.depth-4{}
+ol.commentlist li ul.children li.depth-5{}
+ol.commentlist li ul.children li.odd{}
+ol.commentlist li.even{}
+ol.commentlist li.odd{}
+ol.commentlist li.parent{}
+ol.commentlist li.pingback{}
+ol.commentlist li.thread-alt{}
+ol.commentlist li.thread-even{}
+ol.commentlist li.thread-odd{}
+
+.navleft{width:50%; padding:20px 0 20px 0; float:left; text-align:left}
+.navright{width:50%; padding:20px 0 20px 0; float:right; text-align:right}
+.comment-xhtml{color:#797979; font-size:12px; float:left; padding-bottom:30px}
+#commentform input{height:25px; padding:5px 10px; margin-bottom:20px; font-size:15px; border-bottom:1px solid #ccc; color:#333; background-color:#eaeaea; width:79%; float:right; font-weight:300; font-family:'PT Sans',Arial,sans-serif}
+#commentform textarea{height:180px; padding:10px 10px; font-size:15px; line-height:24px; display:block; color:#333; background-color:#eaeaea; width:79%; float:right; resize:none; border-bottom:1px solid #ccc; font-weight:400}
+.logged-in #commentform textarea{width:98%}
+#commentform input:focus, #commentform textarea:focus, .your-name input[type="text"]:focus, .your-email input[type="text"]:focus, .wpcf7-email:focus, .your-message textarea:focus, .your-subject input[type="text"]:focus{background-color:rgba(247,200,99,1); -webkit-box-shadow:0px 0px 4px rgba(102,203,245,0.6); -moz-box-shadow:0px 0px 4px rgba(102,203,245,0.6); box-shadow:0px 0px 4px rgba(102,203,245,0.6)}
+#commentform p{margin-bottom:10px; clear:both}
+#commentform p.comment-notes{margin:0}
+p.form-allowed-tags{display:none}
+#commentform input#submit{float:right}
+.wpcf7-submit{float:left}
+#commentform input#submit, .wpcf7-submit{text-decoration:none; background-color:#eaeaea; color:#444; text-shadow:0 1px 1px #fff; font-size:18px; line-height:20px; padding:7px 17px 8px 17px; display:inline-block; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; cursor:pointer; margin-top:20px; margin-bottom:20px; width:inherit; height:50px}
+#commentform input#submit:hover, .wpcf7-submit:hover{background-color:#ccc; color:#444; text-shadow:0 1px 1px #fff}
+#commentform input#submit:active{-webkit-box-shadow:0px 4px 10px rgba(0,0,0,0.5); -moz-box-shadow:0px 4px 10px rgba(0,0,0,0.5); box-shadow:0px 4px 10px rgba(0,0,0,0.5)}
+
+.your-name input[type="text"], .your-email input[type="text"], .wpcf7-email, 
+.your-subject input[type="text"]{ width:50%;  padding:10px 20px;  background:#f9f9f9;  box-shadow:0 0 2px #999;  border:1px solid #ddd;  font-size:14px;  line-height:19px;  border:none;  color:#191919;  font-weight:normal}
+
+.your-message textarea{ width:50%;  padding:10px 20px;  background:#f9f9f9;  box-shadow:0 0 2px #999;  border:1px solid #ddd;  height:200px;  border:none;  font-size:14px;  line-height:19px;  text-align:left;  font-weight:normal;  color:#191919}
+
+
+
+/* 31 календарь */
+#calendar_wrap{width:100%; font-size:12px}
+table#wp-calendar{min-width:100%}
+#wp-calendar caption{color:#333; font-size:12px;  padding:6px; text-align:left; text-transform:uppercase}
+#wp-calendar th{border:1px solid #d9d9d9; background:#fff; color:#999;  text-align:center; padding:6px; font-size:12px; font-weight:bold}
+#wp-calendar td{padding:6px; text-align:center}
+#today{background:#9a2b48; color:#FFF}
+#today a{color:#FFF}
+#wp-calendar a{text-decoration:underline}
+
+.cat-description {display: block; margin-bottom: 12px;  padding-bottom:2px; font-style: italic; border-bottom: 1px dashed #eaeaea; }
+
+
+/* 32. анимация в шапке
+
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license
+Copyright (c) 2013 Daniel Eden
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+.animated {-webkit-animation-duration: 1s;animation-duration: 1s; -webkit-animation-fill-mode: both;animation-fill-mode: both;}
+.animated.hinge { -webkit-animation-duration: 2s;animation-duration: 2s;}
+@-webkit-keyframes fadeInLeft {
+ 0% {opacity: 0; -webkit-transform: translateX(-20px);  transform: translateX(-20px);}
+ 100% {opacity: 1;  -webkit-transform: translateX(0);  transform: translateX(0); }}
+@keyframes fadeInLeft {
+ 0% { opacity: 0; -webkit-transform: translateX(-20px);-ms-transform: translateX(-20px);  transform: translateX(-20px); }
+100% { opacity: 1;  -webkit-transform: translateX(0);  -ms-transform: translateX(0); transform: translateX(0); }}
+.fadeInLeft {-webkit-animation-name: fadeInLeft;animation-name: fadeInLeft;}
+@-webkit-keyframes fadeInRight {0% {opacity: 0;-webkit-transform: translateX(20px); transform: translateX(20px);}
+100% {opacity: 1;-webkit-transform: translateX(0);transform: translateX(0);}}
+@keyframes fadeInRight {0% { opacity: 0;-webkit-transform: translateX(20px);-ms-transform: translateX(20px); transform: translateX(20px);}
+100% { opacity: 1; -webkit-transform: translateX(0);-ms-transform: translateX(0); transform: translateX(0);}}
+.fadeInRight { -webkit-animation-name: fadeInRight; animation-name: fadeInRight;}
+
+
+
+/* 33 адаптивные стили */
+@media only screen and (max-width:1024px){
+#backtop {visibility:hidden; height:0}
+.menunav ul li a {padding:15px 8px; font-size:13px; letter-spacing: 1px;}
+.topnavig ul li a {padding:12px 9px 8px 9px; }
+.topsocial{width:27%; }
+.logo{ width:73%;}
+}
+
+@media only screen and (max-width:768px){
+#wrap{width:100%}
+.inner{width:90%}
+ .news-left, .news-right, .main-text-col,.main-text-sidebar,.main-text-sidebar2,.postcol,.post-cats, .post-tags{width:100%; margin-right:0; margin-bottom:20px}
+ .tickercontainer{width:100%; margin:15px 0 25px 0}
+.top-nav-menu, .nav-menu, #search, .webtick{margin-left:-9999px; width:0px; height:0px; overflow:hidden}
+.topnavig, .menunav{background:none; border:none}
+#topheadmenu, #menu{float:left; width:100%}
+.select-menu, .select-menu-main{display:block}
+.topsocial, .foot-widget1, .foot-widget2, .foot-widget3{float:left; width:100%; margin:0 auto 10px; height:auto}
+.logo {height:auto}
+p{text-align:justify}
+#footer{ padding-left:10%;  padding-right:10%}
+h1.post-title{font-size:22px; line-height:26px; margin-bottom:25px; font-weight:700; color:#222}
+h1.news-title{font-size:18px; line-height:21px; margin:3px 0 5px 0}
+h2.news-title, h3.news-title {font-size:15px; line-height:19px; margin:0 0 8px 0; }
+.data-col {display: none}
+.innernav {display: block; float:left; padding:4%; margin:20px 0; background:#f9f9f9; border:1px solid #eaeaea;}
+ol.commentlist li ul.children{padding-left:15px;background:transparent url(images/sub.png) 0px 30px no-repeat; }
+ol.commentlist li ul.children li{margin-left:0}
+ol.commentlist, ol.commentlist li, ol.commentlist ul, ol.commentlist ul li {margin-left: 0;}
+.main-col{float:left; width:50%; margin-right:5%}
+.mid-col, .sidebar{float:left;width:45%; margin:0;}
+}
+
+@media only screen and (max-width:600px){
+#showticker {visibility:hidden; height:0; }
+.related-posts li.related{  width:100%; float:left; display:block;  margin:0 0  2% 0; border:none}
+}
+
+
+@media only screen and (max-width:480px){
+.main-col,.mid-col, .sidebar{float:left;width:100%; margin-bottom:20px;}
+.no-display {opacity:1}
+}
+
+@media only screen and (max-width:320px){
+#wrap{width:100%}
+.inner{width:90%}
+}
+
+/**
+ * Modal window
+ */
+.modal-layout{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    background: rgba(0,0,0, 0.65);
+    z-index: 20000;
+    overflow: auto;
+}
+
+.modal{
+    position: absolute;
+    width: 500px;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: 20px;
+    background: #fff;
+    border: 3px solid rgba(0, 0, 0, 0,85);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    min-height: 337px;
+}
+
+.modal_title{
+    padding: 15px;
+    font-size: 24px;
+    font-weight: normal;
+    text-transform: capitalize;
+    background: #ededed;
+    border-radius: 3px 3px 0 0;
+    color: #337ab7;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.modal_body{
+    padding: 15px 15px 0px;
+    font-size: 18px;
+}
+
+.form-label{
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form-label:before,
+.form-label:after {
+    content:"";
+    display:block;
+    clear: both;
+}
+
+.text-input{
+    padding: 5px;
+    font-size: 18px;
+    box-shadow: none;
+    border-width: 1px;
+    border-radius: 3px;
+    width: 300px;
+    float: right;
+    resize: none;
+}
+
+.area__small{
+    height: 160px;
+}
+
+.form-label_btn{
+    float: right;
+}
+
+.btn{
+    display: block;
+    font-size: 18px;
+    margin-left: 15px;
+    padding: 8px 15px;
+    border: 1px solid #d0d0d0;
+    background: #ededed;
+    border-radius: 3px;
+    color: #303030;
+    text-shadow: 0 1px 0 #fff;
+    cursor: pointer;
+}
+
+.btn__disable{
+    border: 1px solid #ccc;
+    color: #ccc;
+    background: #fff;
+    cursor: default;
+}
+
+.btn__positive{
+    color: #fff;
+    background: #337ab7;
+    text-shadow: none;
+}
+
+.btn__aw{
+    margin-left: 0;
+    text-align: center;
+}
+
+.invalid{
+    border: 1px solid red;
+}
+
+.valid, .valid__e{
+    display: block;
+    float: right;
+    color: red;
+    font-size: 14px;
+    line-height: 4px;
+    margin-bottom: -2px;
+}
+
+.dn{
+    display: none;
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+.ml0{
+    margin-left: 0;
+}
